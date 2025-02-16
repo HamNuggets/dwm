@@ -21,7 +21,7 @@ necessary as root):
 
 Running dwm
 -----------
-Add the following line to your .xinitrc to start dwm using startx:
+Add the following line to your .xinitrc or the exec= of a .desktop file to start dwm:
 
     exec dwm
 
@@ -32,17 +32,18 @@ the DISPLAY environment variable is set correctly, e.g.:
 
 (This will start dwm on display :1 of the host foo.bar.)
 
-In order to display status info in the bar, you can do something
-like this in your .xinitrc:
-
-    while xsetroot -name "`date` `uptime | sed 's/.*,//'`"
-    do
-    	sleep 1
-    done &
-    exec dwm
-
-
 Configuration
 -------------
 The configuration of dwm is done by creating a custom config.h
 and (re)compiling the source code.
+
+Autostart
+---
+
+I applied the Autostart patch to dwm. Just put all your startup programs in ~/.dwm/autostart.sh
+
+Bar
+---
+Status uses pndaspace/dwm-bar on codeberg.
+
+Idk what else to say, screenshot at https://cdn.discordapp.com/attachments/873225516558200962/1340658615157264446/image.png
